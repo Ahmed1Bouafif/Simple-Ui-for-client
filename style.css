@@ -1,0 +1,292 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: var(--clr-text-primary);
+}
+li {
+  list-style-type: none;
+}
+p {
+  line-height: 2rem;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+#header {
+  background: url("./imgs/bg.png");
+  background-size: 45%;
+  background-repeat: no-repeat;
+  background-position: bottom 100% left 10%;
+  height: 100vh;
+}
+
+#footer-title,
+#products-title,
+.desc {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 40%;
+}
+#footer-title,
+#products-title {
+  text-transform: uppercase;
+  line-height: 8rem;
+}
+#footer-title {
+  font-size: 2rem;
+  line-height: 5rem;
+}
+#header,
+#main,
+#footer {
+  padding: 0 9rem;
+}
+
+#navbar,
+#brand,
+#nav-items {
+  display: flex;
+}
+
+.desc {
+  color: var(--clr-text-secondary);
+  font-style: italic;
+}
+.price,
+span {
+  color: var(--clr-accent);
+}
+
+#navbar {
+  height: 5rem;
+  width: 100%;
+  /* background-color: #171A21; */
+  align-items: center;
+  position: relative;
+}
+#nav-items {
+  margin-left: auto;
+  gap: 3rem;
+  margin-right: 3rem;
+}
+.nav-item {
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+.nav-item:hover a {
+  opacity: 0.7;
+}
+
+#search::before {
+  content: "";
+  width: 1px;
+  height: 25px;
+  background: var(--clr-text-primary);
+  position: absolute;
+  right: 2.5rem;
+}
+
+#brand {
+  align-items: center;
+  gap: 0.3rem;
+}
+#logo {
+  font-size: 1.5rem;
+}
+#brand-name {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+#welcome {
+  margin: 8rem 0 0 44rem;
+  height: 37%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 3rem;
+  /* line-height: 1rem; */
+}
+
+#description {
+  max-width: 80%;
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+#btn-main {
+  background: transparent;
+  border: 3px solid var(--clr-text-primary);
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.7rem 1.9rem;
+  transition: color 0.5s ease;
+  transition: background-color 0.5s ease;
+  font-family: var(--font-family);
+}
+#btn-main:hover {
+  color: #d7e5ee;
+  background: var(--clr-text-primary);
+}
+
+#show-more {
+  border-bottom: 3px solid var(--clr-text-primary);
+}
+#show-more:hover {
+  opacity: 0.7;
+}
+
+.product .img {
+  width: 100%;
+  height: 13.5rem;
+}
+
+.offer {
+  background: url("./imgs/card.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: inline-block;
+}
+.offer::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.411);
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 0.65fr 1fr 1fr;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  width: 75%;
+  margin: 5rem auto;
+}
+
+.product {
+  grid-row: span 2;
+  width: 100%;
+}
+
+.offer:nth-of-type(3n-1) {
+  grid-column: span 2;
+  grid-row: span 2;
+  height: 25rem;
+  position: relative;
+}
+.offer:nth-of-type(3n-1) > p {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 2.2rem;
+  max-width: 40%;
+}
+.offer:nth-of-type(3n-1) + .offer,
+.offer:nth-of-type(3n-1) + .offer + .offer {
+  grid-column: span 2;
+  height: 11.3rem;
+  position: relative;
+}
+.offer:nth-of-type(3n-1) + .offer > p {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  font-size: 1.7rem;
+  max-width: 50%;
+}
+.offer:nth-of-type(3n-1) + .offer + .offer > p {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  font-size: 1.7rem;
+  max-width: 30%;
+}
+
+.offer p {
+  z-index: 10;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2rem 0;
+  background: rgb(240, 240, 240);
+}
+
+#social-links {
+  display: flex;
+  gap: 2rem;
+}
+.social-link {
+  font-size: 1.5rem;
+}
+form {
+  display: flex;
+  gap: 0;
+  border: 2px solid var(--clr-text-primary);
+}
+
+#email,
+#email + button {
+  height: 2.5rem;
+  border: none;
+  font-family: var(--font-family);
+}
+#email {
+  width: 18.5rem;
+  padding-left: 1rem;
+}
+#email + button {
+  width: 2.5rem;
+  font-weight: bold;
+  background: var(--clr-text-primary);
+  color: #fff;
+  transition: color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+#email + button:hover {
+  background: transparent;
+  color: var(--clr-text-primary);
+}
